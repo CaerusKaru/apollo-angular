@@ -1,17 +1,19 @@
 export default {
-  entry: 'build/src/index.js',
-  dest: 'build/bundles/apollo.umd.js',
-  format: 'umd',
-  moduleName: 'ng.apollo',
-  sourceMap: true,
+  input: 'build/src/index.js',
+  output: {
+    file: 'build/bundles/apollo.umd.js',
+    format: 'umd'
+  },
+  name: 'ng.apollo',
+  sourcemap: true,
   onwarn,
   globals: {
     '@angular/core': 'ng.core',
     'rxjs/Observable': 'Rx',
-    'rxjs/observable/from': 'Rx.Observable',
-    'rxjs/observable/fromPromise': 'Rx.Observable',
+    'rxjs/Observable/from': 'Rx.Observable',
+    'rxjs/Observable/fromPromise': 'Rx.Observable',
     'rxjs/scheduler/queue': 'Rx.Scheduler',
-    'rxjs/operator/observeOn': 'Rx.Observable.prototype',
+    'rxjs/operators': 'Rx.Observable.prototype',
     'apollo-client-rxjs': 'apollo.rxjs',
     'apollo-client': 'apollo',
   }

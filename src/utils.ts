@@ -1,4 +1,4 @@
-import { observeOn } from 'rxjs/operator/observeOn';
+import { observeOn } from 'rxjs/operators';
 import { queue } from 'rxjs/scheduler/queue';
 import { Subscription } from 'rxjs/Subscription';
 import { Observable } from 'rxjs/Observable';

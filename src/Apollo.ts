@@ -9,7 +9,7 @@ import {
   ApolloExecutionResult,
 } from 'apollo-client';
 import { Observable } from 'rxjs/Observable';
-import { from } from 'rxjs/observable/from';
+import { from } from 'rxjs/Observable/from';
 
 import { ApolloQueryObservable } from './ApolloQueryObservable';
 import { CLIENT_MAP, CLIENT_MAP_WRAPPER } from './tokens';
@@ -42,7 +42,7 @@ export class ApolloBase {
   }
 
   public subscribe(options: SubscriptionOptions): Observable<any> {
-    return wrapWithZone<any>(from(this.client.subscribe(options)));
+    return wrapWithZone<any>(from.call(this.client.subscribe(options)));
   }
 
   public getClient(): ApolloClient {
